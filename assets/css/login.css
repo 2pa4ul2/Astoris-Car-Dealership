@@ -1,0 +1,131 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: rgb(23,23,23);
+    background: linear-gradient(152deg, rgba(23,23,23,1) 29%, rgba(59,59,59,1) 100%);
+}
+
+main{
+    height: 600px;
+    width: 900px;
+    display: flex;
+    align-self: center;
+    background-color: #121212;
+    border-radius: 10px;
+}
+    .back-button{
+        height: 10px;
+        width: 30px;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #E45349;
+        border-radius: 100px;
+        position: absolute;
+        top: 0px;
+        left: 10px;
+    }
+    .back-button-sign{
+        height: 10px;
+        width: 30px;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: #E45349;
+        border-radius: 100px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+    }
+    .form-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 100%;
+        color: white;
+    }
+
+    .form-container h1{
+        text-align: center;
+        padding: 20px 0 10px 0;
+        font-size: 1.5rem;
+    }
+    .form-container p{
+        text-align: center;
+        font-size: 0.75rem;
+    }
+    .form-container .select-container{
+        display: flex;
+        justify-content: center;
+    }
+    .form-container select{
+        width: 150px;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+        background-color: #333;
+        color: white;
+    }
+    .form-container input{
+        width: 300px;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+        background-color: #333;
+        color: white;
+    }
+    .form-container input[type="submit"]{
+        width: 320px;
+        margin: 30px 0 0 0;
+        background-color: #0077cc;
+        background-color: white;
+        color: black;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .form-container input[type="submit"]:hover{
+        background-color: hsl(206, 100%, 89%);
+    }
+    .form-container a{
+        color: white;
+        text-decoration: none;
+        font-size: 0.75rem;
+        margin: 10px 0 0 0;
+        text-align: center;
+        cursor: pointer;
+    }
+    .form-container form{
+        margin: 20px 0 70px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container label{
+        margin: 0;
+        font-size: 0.75rem;
+    }
+    .category-section {
+        display: none;
+    }
+
+    .video-container{
+        height: 100%;
+        width: 40%;
+    }
+    video{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 10px 10px;
+    }
