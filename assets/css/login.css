@@ -8,16 +8,28 @@ body{
     height: 100vh;
     display: flex;
     justify-content: center;
-    background: rgb(23,23,23);
-    background: linear-gradient(152deg, rgba(23,23,23,1) 29%, rgba(59,59,59,1) 100%);
+    background: linear-gradient(-45deg, #150f16, #141414, #0b1b22, #152a25);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;  
 }
-
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
 main{
     height: 600px;
     width: 900px;
     display: flex;
     align-self: center;
     background-color: #121212;
+    box-shadow: rgba(40, 40, 40, 0.2) 0px 8px 24px;
     border-radius: 10px;
 }
     .back-button{
@@ -107,7 +119,7 @@ main{
         cursor: pointer;
     }
     .form-container form{
-        margin: 20px 0 70px 0;
+        margin: 20px 0 20px 0;
         display: flex;
         flex-direction: column;
     }
@@ -128,4 +140,30 @@ main{
         width: 100%;
         object-fit: cover;
         border-radius: 10px 10px 10px 10px;
+    }
+
+    .error_display{
+        text-align: center;
+        display: none;
+        color: rgb(255, 166, 166);
+        padding: 5px 20px;
+        margin: 0 0 10px 0;
+        background-color: #333;
+        border: 1px solid rgb(255, 166, 166);
+        border-radius: 5px;
+        font-size: .75rem;
+        font-weight: 600;
+    }
+
+    .success_display{
+        text-align: center;
+        display: none;
+        color: rgb(166, 255, 166);
+        padding: 5px 20px;
+        margin: 0 0 10px 0;
+        background-color: #333;
+        border: 1px solid rgb(166, 255, 166);
+        border-radius: 5px;
+        font-size: .75rem;
+        font-weight: 600;
     }

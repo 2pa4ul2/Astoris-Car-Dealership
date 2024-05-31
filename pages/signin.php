@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+// Check if there are any success or error messages stored in session
+if(isset($_SESSION['success_message'])) {
+    echo '<div class="success_display" style="display: block;">' . $_SESSION['success_message'] . '</div>';
+    unset($_SESSION['success_message']); // unset the session variable after displaying
+}
+
+if(isset($_SESSION['error_message'])) {
+    echo '<div class="error_display" style="display: block;">' . $_SESSION['error_message'] . '</div>';
+    unset($_SESSION['error_message']); // unset the session variable after displaying
+}
+
+session_unset(); // unset all other session variables
+include "../includes/signin_function.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,35 +50,99 @@
 
 
                 <div id="admin" class="category-section">
-                    <form>
-                        <label for="admin-id">Username</label>
-                        <input type="text" id="admin-id" name="admin-id" placeholder="Enter your Username">
-                        <label for="admin-password">Password:</label>
-                        <input type="password" id="admin-password" name="admin-password" placeholder="Enter your Password">
-                        <input type="submit" value="Submit">
-                        <a>don't have an account yet?</a>
+                    <form action="../pages/signin.php" method="POST">
+                    <?php 
+                    $errors = validate_input($_POST);
+                    if (isset($_POST['admin-signup'])) {
+                        if (empty($errors) && create_account($conn, $_POST, 'admin')) {
+                            echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                        } else {
+                            if (!empty($errors)) {
+                                foreach ($errors as $error) {
+                                    echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                }
+                            } else {
+                                echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                            }
+                        }
+                    }
+                    ?>
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter First name">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
+                        
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your Username">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <input type="submit" value="Submit" name="admin-signup"> 
+                        <a href="login.php">Already have an account?</a>
                     </form>
                 </div>
 
                 <div id="manager" class="category-section">
-                    <form>
-                        <label for="manager-id">Username</label>
-                        <input type="text" id="manager-id" name="manager-id" placeholder="Enter your Username">
-                        <label for="manager-password">Password:</label>
-                        <input type="password" id="manager-password" name="manager-password" placeholder="Enter your Password">
-                        <input type="submit" value="Submit">
-                        <a>don't have an account yet?</a>
+                    <form action="../pages/signin.php" method="POST">
+                        <?php
+                        $errors = validate_input($_POST);  
+                        if (isset($_POST['manager-signup'])) {
+                            if (empty($errors) && create_account($conn, $_POST, 'manager')) {
+                                echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                            } else {
+                                if (!empty($errors)) {
+                                    foreach ($errors as $error) {
+                                        echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                    }
+                                } else {
+                                    echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                }
+                            }
+                        }
+                        ?>
+
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter First name">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
+                        
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your Username">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <input type="submit" value="Submit" name="manager-signup"> 
+                        <a href="login.php">Already have an account?</a>
                     </form>
                 </div>
 
                 <div id="user" class="category-section">
-                    <form>
-                        <label for="user-id">Username</label>
-                        <input type="text" id="user-id" name="user-id" placeholder="Enter your Username">
-                        <label for="user-password">Password:</label>
-                        <input type="password" id="user-password" name="user-password" placeholder="Enter your Password">
-                        <input type="submit" value="Submit">
-                        <a>don't have an account yet?</a>
+                    <form action="../pages/signin.php" method="POST">
+                        <?php
+                        $errors = validate_input($_POST);
+                        if (isset($_POST['customer-signup'])) {
+                            if (empty($errors) && create_account($conn, $_POST, 'customer')) {
+                                echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                            } else {
+                                if (!empty($errors)) {
+                                    foreach ($errors as $error) {
+                                        echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                    }
+                                } else {
+                                    echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                }
+                            }
+                        }
+                        ?>
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="Enter First name">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Enter last name">
+                        
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your Username">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <input type="submit" value="Submit" name="customer-signup"> 
+                        <a href="login.php">Already have an account?</a>
                     </form>
                 </div>
         </div>
@@ -82,6 +165,6 @@
 
         // Show the admin section by default
         document.getElementById('admin').style.display = 'block';
-    </script>
+</script>
 </body>
 </html>
