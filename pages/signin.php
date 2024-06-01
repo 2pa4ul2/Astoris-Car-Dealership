@@ -97,6 +97,7 @@ include "../includes/signin_function.php";
                                     echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
                                 }
                             }
+                            die();
                         }
                         ?>
 

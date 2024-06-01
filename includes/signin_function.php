@@ -34,7 +34,6 @@ function validate_input($data) {
 
 
 function create_account($conn, $data, $role) {
-    $password_hash = password_hash($data['password'], PASSWORD_DEFAULT);
     $table = '';
     
     switch ($role) {
@@ -74,13 +73,14 @@ function create_account($conn, $data, $role) {
     $insert_sql = "INSERT INTO $table (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
     if (mysqli_stmt_prepare($stmt, $insert_sql)) {
-        mysqli_stmt_bind_param($stmt, 'ssss', $data['first_name'], $data['last_name'], $data['username'], $password_hash);
+        mysqli_stmt_bind_param($stmt, 'ssss', $data['first_name'], $data['last_name'], $data['username'], $data['password']);
         return mysqli_stmt_execute($stmt);
     } else {
         // Error preparing statement
         return false;
     }
 }
+
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
