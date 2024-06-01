@@ -60,10 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
                 header("Location: admin.php");
                 exit();
             } elseif ($role == 'manager') {
-                header("Location: manager_dashboard.php");
+                header("Location: manager.php");
                 exit();
             } else {
-                header("Location: user_dashboard.php");
+                header("Location: customer.php");
                 exit();
             }
         } else {
