@@ -11,6 +11,44 @@ try{
     echo 'Connection failed: ' . $e->getMessage();
 }
 
+
+//LIST OF CATEGORIES
+    $query = "SELECT * FROM category";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $category_id = array();
+    $category_name = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $category_id[] = $row['category_id'];
+        $category_name[] = $row['category_name'];
+    }
+//LIST OF CATEGORIES
+    $supplier_query = "SELECT * FROM supplier";
+    $stmt = $pdo->prepare($supplier_query);
+    $stmt->execute();
+    $supplier_id = array();
+    $supplier_name = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $supplier_id[] = $row['supplier_id'];
+        $supplier_name[] = $row['supplier_name'];
+    }
+
+//COUNT OF CARS PER CATEGORY
+    $prodquery = "SELECT category.category_name, COUNT(product.product_id) AS car_count
+    FROM category
+    LEFT JOIN product ON category.category_id = product.category_id
+    GROUP BY category.category_id
+    ORDER BY category.category_name
+    ";
+    $stmt = $pdo->prepare($prodquery);
+    $stmt->execute();
+    $car_count = array();
+    while($row2 = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $car_count[] = $row2['car_count'];
+    }
+    
+
+
     $query_product_count = "SELECT COUNT(*) as product_count FROM product";
     $stmt_product_count = $pdo->prepare($query_product_count);
     $stmt_product_count->execute();
@@ -30,5 +68,6 @@ try{
     $stmt_price_count = $pdo->prepare($query_total_price);
     $stmt_price_count->execute();
     $price_count = $stmt_price_count->fetch(PDO::FETCH_ASSOC)['price_count'];   
+
 
 ?>

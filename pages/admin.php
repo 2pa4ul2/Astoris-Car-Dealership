@@ -567,30 +567,58 @@ $username = $_SESSION['username'];
         </section>
     </main>
 
+    
+
     <script src="../assets/js/switch.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script>
-        const ctx = document.getElementById('myChart');
+        var product_count = JSON.parse('<?php echo json_encode($product_count); ?>');
+        var category_id = JSON.parse('<?php echo json_encode($category_id); ?>');
+        var category_name = JSON.parse('<?php echo json_encode($category_name); ?>');
+        var car_count = JSON.parse('<?php echo json_encode($car_count); ?>');
 
-        new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-            y: {
-                beginAtZero: true
-            }
+        console.log(product_count);
+        console.log(category_id);
+        console.log(category_name);
+        console.log(car_count);
+
+        for (var i = 0; i < category_id.length; i++) {
+            console.log('Category ID: ' + category_id[i] + ', Category Name: ' + category_name[i]);
+        }
+
+        //setup block
+        const data = {
+        labels: category_name,
+        datasets: [{
+            label: 'Car Count per Category',
+            data: car_count,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: '#fc894d',
+            borderRadius: 100,
+            color:'#fff',
+            tension: 0.1
+        }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                
             }
         }
-        });
+    }
+    
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
     </script>
 
 </body>

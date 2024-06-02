@@ -19,7 +19,7 @@ main{
     display: flex;
     height: 100vh;
     background-color: #0b1b22;
-
+    overflow: auto;
 }
 
 nav{
@@ -30,8 +30,8 @@ nav{
     z-index: 99;
 }
         .logo{
-            height: 60px;
-            margin: 0;
+            height: 50px;
+            margin: 0 auto;
         }
         .tabs{
             padding: 0;
@@ -164,6 +164,7 @@ nav{
 .box-container-main{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 10px 30px 0px;
 }
         .text-description{
@@ -179,7 +180,7 @@ nav{
             margin: 10px 0 0 0;
         }
         .box-data, .box-data2, .box-data3, .box-data4{
-            height: 80px;
+            height: 100px;
             width: 170px;
             background-color: rgb(255, 166, 166);
             border-radius: 10px;
