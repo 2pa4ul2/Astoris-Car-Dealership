@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
             } elseif ($role == 'manager') {
                 header("Location: manager.php");
                 exit();
-            } else {
+            } elseif($role == 'user') {
                 header("Location: customer.php");
                 exit();
             }
