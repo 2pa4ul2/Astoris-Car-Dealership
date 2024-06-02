@@ -192,16 +192,13 @@ h1{
         }
 
 
-    /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    *::-webkit-scrollbar-track {
-        background: #010101e3;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background-color: #E45349;
-        ;
-    }
+        ::-webkit-scrollbar {
+            width: 6px;
+        } 
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px  #05111775; 
+        } 
+        ::-webkit-scrollbar-thumb {
+            background-color:#0b507375;
+        }
+        

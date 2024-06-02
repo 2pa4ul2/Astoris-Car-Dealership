@@ -46,7 +46,25 @@ try{
     while($row2 = $stmt->fetch(PDO::FETCH_ASSOC)){
         $car_count[] = $row2['car_count'];
     }
-    
+
+    $full_data = "SELECT product.product_id, product.product_name, supplier.supplier_name, category.category_name, product.price
+                    FROM product
+                    INNER JOIN supplier ON product.supplier_id = supplier.supplier_id
+                    INNER JOIN category ON product.category_id = category.category_id";
+    $stmt = $pdo->prepare($full_data);
+    $stmt->execute();
+    $tblproduct_id = array();
+    $tblproduct_name = array();
+    $tblsupplier_name = array();
+    $tblcategory_name = array();
+    $tblprice = array();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $tblproduct_id[] = $row['product_id'];
+        $tblproduct_name[] = $row['product_name'];
+        $tblsupplier_name[] = $row['supplier_name'];
+        $tblcategory_name[] = $row['category_name'];
+        $tblprice[] = $row['price'];
+    }
 
 
     $query_product_count = "SELECT COUNT(*) as product_count FROM product";
