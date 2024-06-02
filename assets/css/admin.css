@@ -18,14 +18,14 @@ main{
     width: 100%;
     display: flex;
     height: 100vh;
-    background-color: #171717;
+    background-color: #0b1b22;
 
 }
 
 nav{
     width: 100%;
     height: 100vh;
-    background-color: #2F2F2F;
+    background-color: #142d39;
     color: #fff;
     z-index: 99;
 }
@@ -44,7 +44,7 @@ nav{
                 header nav .tabs .tab-item a[data-switcher]{
                     display: flex;
                     align-items: center;
-                    color: #fff;
+                    color: #ccdce4;
                     text-decoration: none;
                     text-transform: capitalize;
                     font-size: 1rem;
@@ -74,7 +74,7 @@ nav{
                     border-radius: 5px;
                     padding: 15px 10px;
                     transition: 0.3s ease-in-out;
-                    background-color: #1717179f;
+                    background-color: #0e242e;
                 }
                 header nav .tabs li{
                     list-style: none;
@@ -136,6 +136,7 @@ nav{
             margin: 20px 60px;
             font-size: 2rem;
             text-transform: capitalize;
+            font-weight: 600;
         }
 
 .first-container{
@@ -145,7 +146,7 @@ nav{
 .chart-container{
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.115);
+    background-color: #142d39;
     height: 35%;
     width: 100%;
     border-radius: 10px;
@@ -155,7 +156,7 @@ nav{
 .box-container{
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.115);
+    background-color: #142d39;
     border-radius: 10px;
     margin: 10px 10px 0px 5%;
 }
@@ -166,7 +167,8 @@ nav{
     margin: 10px 30px 0px;
 }
         .text-description{
-            color: white;
+            color: #ccdce4;
+            font-weight: 500;
             margin: 10px 30px;
         }
         .text-description .text-title{
@@ -176,25 +178,39 @@ nav{
             font-size: .75rem;
             margin: 10px 0 0 0;
         }
-        .box-data{
-            height: 140px;
-            width: 140px;
-            background-color: hsl(0, 100%, 75%);
-            border-radius: 15px;
-            color: black;
+        .box-data, .box-data2, .box-data3, .box-data4{
+            height: 80px;
+            width: 170px;
+            background-color: rgb(255, 166, 166);
+            border-radius: 10px;
             margin: 5px;
+            font-weight: 500;   
         }
-        .box-container-main :nth-child(2){
-            background-color: hsl(236, 100%, 75%);
-            border-radius: 10px;
+        .box-data2{            
+            background-color: rgb(160, 166, 255);
+            border-radius: 10px;}
+        .box-data3{            
+            background-color: rgb(255, 239, 166);
+            border-radius: 10px;}
+        .box-data4{            
+            background-color: rgb(167, 255, 166);
+            border-radius: 10px;}
+        .text-data{
+            height: 100%;
+            margin: 5px 10px 5px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #0b1b22;
+            font-size: 1rem;
+            font-weight: 600;
         }
-        .box-container :nth-child(3){
-            background-color: hsl(49, 100%, 75%);
-            border-radius: 10px;
-        }
-        .box-container :nth-child(4){
-            background-color: hsl(119, 100%, 75%);
-            border-radius: 10px;
+        .data-count{
+            background-color: none;
+            color: #0b1b22;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
         }
 
 

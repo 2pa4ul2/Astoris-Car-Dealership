@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include "../includes/compute.php";
 // Check if user is logged in and has admin role
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     // Redirect to login page or show an error message
@@ -71,16 +71,28 @@ $username = $_SESSION['username'];
                         </div>
                         <div class="box-container-main">
                             <div class="box-data">
-                                <h1>ab</h1>
+                                <div class="text-data">
+                                    <h1>Product Sold</h1>
+                                    <h1 class="data-count"><?php echo $product_count; ?></h1>
+                                </div>
                             </div>
-                            <div class="box-data">
-                                <h1>cs</h1>
+                            <div class="box-data2">
+                                <div class="text-data">
+                                    <h1>Suppliers</h1>
+                                    <h1 class="data-count"><?php echo $supplier_count; ?></h1>
+                                </div>    
                             </div>
-                            <div class="box-data">
-                                <h1>we</h1>
+                            <div class="box-data3">
+                                <div class="text-data">
+                                    <h1>Car Categories</h1>
+                                    <h1 class="data-count"><?php echo $category_count; ?></h1>
+                                </div>
                             </div>
-                            <div class="box-data">
-                                <h1>te</h1>
+                            <div class="box-data4">
+                                <div class="text-data">
+                                    <h1>Total Revenue</h1>
+                                    <h1 class="data-count">$<?php echo $price_count; ?></h1>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -562,22 +574,22 @@ $username = $_SESSION['username'];
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
-            type: 'line',
-            data: {
+        type: 'bar',
+        data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1
             }]
-            },
-            options: {
+        },
+        options: {
             scales: {
-                y: {
+            y: {
                 beginAtZero: true
-                }
             }
             }
+        }
         });
     </script>
 
