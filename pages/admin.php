@@ -72,7 +72,7 @@ $username = $_SESSION['username'];
                         <div class="box-container-main">
                             <div class="box-data">
                                 <div class="text-data">
-                                    <h1>Product Sold</h1>
+                                    <h1>Total Products</h1>
                                     <h1 class="data-count"><?php echo $product_count; ?></h1>
                                 </div>
                             </div>

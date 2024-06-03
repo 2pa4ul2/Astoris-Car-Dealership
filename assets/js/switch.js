@@ -16,7 +16,14 @@ window.onload = () => {
             // Add the active class to the new page
             document.querySelector(`.pages .page[data-page="${page_id}"]`).classList.add('is-active');
 
-            console.log(page_id); // Optional: for debugging
+            // Store the current page id in the session with AJAX
+            fetch('store_page.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'currentPage=' + page_id,
+            });
         });
     }
 }
