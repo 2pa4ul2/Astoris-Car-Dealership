@@ -59,8 +59,29 @@
                 </div>
             </div>
             <div class="page" data-page="2">
-                <h2>page2</h2>
-                <p>b</p>
+                <div class="collections-container">
+                        <h1>OUR BRAND PARTNERS</h1>
+                        <div class="container">
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/audi.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/bmw.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/buick.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/chevy.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/dodge.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ferrari.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ford.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/infiniti.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/kia.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lexus.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lincoln.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maserati.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maybach.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mercedes.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mini.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/nissan.png" alt=""></a></div>
+                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/oldsmobile.png" alt=""></a></div>
+
+                        </div>
+                    </div>
             </div>
             <div class="page" data-page="3">
                 <h2>page3</h2>

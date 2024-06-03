@@ -37,6 +37,7 @@ if (isset($_POST['checkout'])) {
         $cartClearedAlert = true;
     } else {
         $cartEmptyAlert = true;
+        
     }
 }
 
@@ -54,7 +55,7 @@ if (isset($_POST['add-to-table'])) {
             );
             $_SESSION['cart'][$count] = $item_array;
         } else {
-            $alreadyadded = true;
+            $cartClearedAlert = true;
         }
     } else {
         $item_array = array(
@@ -101,7 +102,7 @@ if (isset($_POST['add-to-table'])) {
                     <a data-switcher data-tab="4">about</a>
                 </li>
                 <li class="tab-item">
-                    <a data-switcher data-tab="4">Contacts</a>
+                    <a data-switcher data-tab="5">Contacts</a>
                 </li>
             </ul>
             <div class="logout">
@@ -138,23 +139,24 @@ if (isset($_POST['add-to-table'])) {
                 <div class="collections-container">
                     <h1>OUR BRAND PARTNERS</h1>
                     <div class="container">
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/audi.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/bmw.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/buick.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/chevy.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/dodge.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/ferrari.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/ford.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/infiniti.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo//kia.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/lexus.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/lincoln.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/maserati.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/maybach.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/mercedes.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/mini.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/nissan.png" alt=""></div>
-                        <div class="cards"><img id="logo-img" src="../assets/images/brandlogo/oldsmobile.png" alt=""></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/audi.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/bmw.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/buick.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/chevy.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/dodge.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ferrari.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ford.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/infiniti.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/kia.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lexus.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lincoln.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maserati.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maybach.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mercedes.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mini.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/nissan.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/oldsmobile.png" alt=""></a></div>
+
                     </div>
                 </div>
             </div>
@@ -197,18 +199,16 @@ if (isset($_POST['add-to-table'])) {
                         </div>
 
                         <div class="product-container-order">
-                            <h1>OUR BRAND PARTNERS</h1>
+                            <h1>Models</h1>
                             <div class="product-container">
                                 <?php
-                                    // Establish database connection
                                     $conn = mysqli_connect("localhost", "root", "", "carlink");
 
-                                    // Check connection
                                     if (!$conn) {
                                         die("Connection failed: " . mysqli_connect_error());
                                     }
 
-                                    // Define SQL query with LIMIT clause
+                                    // Define SQL query with Limit to 25 products
                                     $sql = "SELECT * FROM product LIMIT 25";
 
                                     // Execute the query
@@ -236,8 +236,6 @@ if (isset($_POST['add-to-table'])) {
                                     } else {
                                         echo "No products found.";
                                     }
-
-                                    // Close the database connection
                                     mysqli_close($conn);
                                 ?>
 
@@ -246,52 +244,57 @@ if (isset($_POST['add-to-table'])) {
                 </div>
             </div>
             <div class="page" data-page="4">
-                <h2>About</h2>
-                <p>d</p>
+                <div class="about-container">
+                    <div>
+                        <h4 class="astoris">Astoris</h4>
+                            <div class="mission-container">
+                                <p class="mission">Welcome to Astoris Car Dealership, your premier destination for quality vehicles and exceptional service. With a commitment to excellence, we offer a curated selection of new and pre-owned cars, backed by transparent pricing and financing options. Our dedicated team is here to make your car-buying experience seamless and enjoyable. Visit us today and discover the Astoris difference.</p>
+                            </div>
+                    </div>
+                    <div>
+                        <h4 class="astoris">Our Mission</h4>
+                        <div class="mission-container">
+                            <p class="mission">At Astoris Car Dealership, our mission is simple: to provide every customer with a seamless and enjoyable car-buying experience. We achieve this by offering a curated selection of quality vehicles, transparent pricing, and flexible financing options. Our commitment to excellence drives us to exceed expectations and ensure that every customer leaves satisfied. With Astoris, you're not just buying a car; you're joining a community built on trust, integrity, and exceptional service.</p>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             <div class="page" data-page="5">
-                <h2>Contact</h2>
-                <p>d</p>
+                <div class="about-container">
+                    <div>
+                        <h4>Contact us</h4>
+                    </div>
+                    <div>
+                    <h1>Astoris Car Dealership</h1>
+    <p>123 Main Street<br>
+    City, State, Zip Code</p>
+    <p>Phone: (123) 456-7890<br>
+    Email: <a href="mailto:info@astorisdealership.com">info@astorisdealership.com</a></p>
+    <p>Hours of Operation:<br>
+    Monday - Friday: 9:00 AM - 7:00 PM<br>
+    Saturday: 9:00 AM - 5:00 PM<br>
+    Sunday: Closed</p>
+    <p>Connect with us on social media:<br>
+    Facebook: <a href="https://www.facebook.com/astorisdealership">facebook.com/astorisdealership</a><br>
+    Twitter: <a href="https://twitter.com/astorisdealership">twitter.com/astorisdealership</a><br>
+    Instagram: <a href="https://instagram.com/astorisdealership">instagram.com/astorisdealership</a></p>
+    <p>For inquiries, appointments, or any assistance, please don't hesitate to <a href="contact.html">contact us</a>. We're here to help you every step of the way.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <script src="../assets/js/switch.js" defer></script>
     <?php if(isset($cartClearedAlert) && $cartClearedAlert): ?>
-        <script>
-            Swal.fire({
-                title: 'Checkout Success!',
-                icon: 'success',
-                showConfirmButton: false,
-                color:'#fff',
-                background: '#142d39',
-                timer: 2000
-            });
-        </script>
+        <script src="../assets/js/alertcheckout.js"></script>
     <?php endif; ?>
     <?php if(isset($cartEmptyAlert) && $cartEmptyAlert): ?>
-        <script>
-            Swal.fire({          
-                title: 'Cart Empty!',
-                icon: 'success',
-                showConfirmButton: false,
-                color:'#fff',
-                background: '#142d39',
-                timer: 2000
-            });
-        </script>
+        <script src="../assets/js/alertempty.js"></script>
     <?php endif; ?>
     <?php if(isset($alreadyadded) && $alreadyadded): ?>
-        <script>
-            Swal.fire({
-                title: 'Item already added to cart!',
-                icon: 'error',
-                showConfirmButton: false,
-                color:'#fff',
-                background: '#142d39',
-                timer: 2000
-            });
-        </script>
+        <script src="../assets/js/alertadded.js"></script>
     <?php endif; ?>
 </body>
 </html>
