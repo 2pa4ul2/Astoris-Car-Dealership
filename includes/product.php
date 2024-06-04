@@ -70,8 +70,7 @@ if (isset($_GET['product_id'])) {
     <main>
         <div class="container">
             <div class="content-btn">
-                    <button class="tab-btn-secondary">Modify Product</button>
-                    <div class="line"></div>
+                    <h4 class="tab-btn-secondary">Modify Product</h4>
             </div>    
 
 
@@ -82,28 +81,35 @@ if (isset($_GET['product_id'])) {
                                 <label for="product_name">Product Name</label>
                                 <input class="form-input" type="text" name="product_name" value="<?php echo isset($product['product_name']) ? $product['product_name'] : ''; ?>">
 
-                                <label for="supplier_id">Supplier</label>
-                                <select class="select" name="supplier_id">
-                                    <?php foreach ($suppliers as $supplier): ?>
-                                        <option value="<?php echo $supplier['supplier_id']; ?>" <?php echo ($product['supplier_id'] == $supplier['supplier_id']) ? 'selected' : ''; ?>>
-                                            <?php echo $supplier['supplier_id']; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-
-                                <label for="category_id">Category</label>
-                                <select class="select" name="category_id">
-                                    <?php foreach ($categories as $category): ?>
-                                        <option value="<?php echo $category['category_id']; ?>" <?php echo ($product['category_id'] == $category['category_id']) ? 'selected' : ''; ?>>
-                                            <?php echo $category['category_id']; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <div class="select-container">
+                                    <div>
+                                        <label for="supplier_id">Supplier</label>
+                                        <select class="select" name="supplier_id">
+                                            <?php foreach ($suppliers as $supplier): ?>
+                                                <option value="<?php echo $supplier['supplier_id']; ?>" <?php echo ($product['supplier_id'] == $supplier['supplier_id']) ? 'selected' : ''; ?>>
+                                                    <?php echo $supplier['supplier_id'], " - ", $supplier['supplier_name']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>    
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="category_id">Category</label>
+                                        <select class="select" name="category_id">
+                                            <?php foreach ($categories as $category): ?>
+                                                <option value="<?php echo $category['category_id']; ?>" <?php echo ($product['category_id'] == $category['category_id']) ? 'selected' : ''; ?>>
+                                                    <?php echo $category['category_id'],"-", $category['category_name']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <label for="price">Price</label>
                                 <input class="form-input" type="number" name="price" value="<?php echo isset($product['price']) ? $product['price'] : ''; ?>">
-
-                                <button class="submit-btn" type="submit" name="update_product">Submit</button>
+                                <div class="btn-container">
+                                    <button class="submit-btn" type="submit" name="update_product">Submit</button>
+                                </div>
                             </form>
                         </div>
                 </div>

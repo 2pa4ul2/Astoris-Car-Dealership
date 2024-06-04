@@ -280,7 +280,29 @@ nav{
     width: 300px;
 }
 
+.update-btn{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #12b800;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
 
+.delete-btn{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #ff5c5c;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
 
 ::-webkit-scrollbar {
     width: 6px;

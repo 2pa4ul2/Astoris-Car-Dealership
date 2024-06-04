@@ -1,0 +1,130 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(-45deg, #352538, #141414, #3e99c0, #1d443b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;  
+}
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+header{
+    width: 270px;
+}
+
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0b1b22;
+    overflow: auto;
+}
+.tab-btn-secondary{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 20px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    height: 400px;
+    width: 400px;
+}
+.content{
+    width: 80%;
+}
+
+
+.input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    color: #0b1b22;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+input[type="text"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #0b1b22;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.select-container{
+    display: flex;
+    align-items: space-between;
+    width: 100%;
+
+}
+
+select{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #0b1b22;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+input[type="number"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #0b1b22;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.submit-btn{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b1b22;
+}

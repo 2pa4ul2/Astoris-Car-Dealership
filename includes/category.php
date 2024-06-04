@@ -17,8 +17,7 @@ session_start();
     <main>
         <div class="container">
             <div class="content-btn">
-                    <button class="tab-btn-secondary">Update Category</button>
-                    <div class="line"></div>
+                    <h4 class="tab-btn-secondary">Update Category</h4>
             </div>    
 
 
@@ -27,11 +26,13 @@ session_start();
                         <div>
                             <?php include "../includes/update.php"?>
                             <form action="../includes/category.php?new_category_id=<?php echo $category_id;?>" name="form_type" method="post">
+                            <div class="input-container">    
                                 <label for="category_name">Category Name</label>
                                 <input class="form-input" type="text" name="category_name" value="<?php echo $row['category_name'] ?>"><br>
+                            </div>
+                            <div class="btn-container">
                                 <button class="submit-btn" name="update_category" value="Update">Submit</button> 
-                            </form>
-
+                            </div>
                             </form>
                         </div>
                 </div>

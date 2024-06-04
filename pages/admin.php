@@ -48,9 +48,6 @@ $username = $_SESSION['username'];
                 <li class="tab-item">
                     <a data-switcher data-tab="5"><i class='bx bxs-user-detail'></i>Accounts</a>
                 </li>
-                <li class="tab-item">
-                    <a data-switcher data-tab="6"><i class='bx bxs-user-detail'></i>Settings</a>
-                </li>
             </ul>
             <div class="logout">
                 <a class="logout-btn" href="logout.php">Logout</a>
@@ -100,10 +97,13 @@ $username = $_SESSION['username'];
                     </div>
                     <div class="chart-container">
                         <div>
-                            <canvas id="myChart"></canvas>
+                            <canvas id="top3"></canvas>
                         </div>
                     </div>
                 </div>
+                <!-- <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div> -->
                 <div class="table-container">
                     <div class="table-content">
                         <h1 class="summary">Full Data</h1>
@@ -781,36 +781,6 @@ $username = $_SESSION['username'];
                 </div>
             </div>
             
-
-            
-            <div class="page" data-page="6">
-                <div class="top-bar">
-                    <h1 class="title">Settings</h1>
-                    <div class="profile"><a href=""></a></div>
-                </div>
-                
-                <div class="form-container">
-                    <form>
-                        <div class="mb-6">
-                            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default input</label>
-                            <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name">
-                        <div class="mb-6">
-                            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default input</label>
-                            <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name">
-                        </div>
-                        <div class="mb-6">
-                            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default input</label>
-                            <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name">
-                        </div>
-                        <div class="mb-6">
-                            <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default input</label>
-                            <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name">
-                        </div>
-                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-                    </form>
-                </div>
-
-            </div>
         </section>
     </main>
 
@@ -820,6 +790,41 @@ $username = $_SESSION['username'];
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // PHP data to JavaScript variables
+        const productNames = <?php echo json_encode($productNames); ?>;
+        const quantities = <?php echo json_encode($quantities); ?>;
+        
+        const ctx = document.getElementById('top3').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // or 'line', 'pie', etc.
+            data: {
+                labels: productNames,
+                datasets: [{
+                    label: 'Quantity Reserved',
+                    data: quantities,
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.3)',
+                        'rgba(153, 102, 255, 0.3)',
+                        'rgba(255, 159, 64, 0.3)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
     <script>
         var product_count = JSON.parse('<?php echo json_encode($product_count); ?>');
         var category_id = JSON.parse('<?php echo json_encode($category_id); ?>');
@@ -885,7 +890,7 @@ $username = $_SESSION['username'];
         }
     }
     
-    const myChart = new Chart(
+    const catergory = new Chart(
         document.getElementById('myChart'),
         config
     );

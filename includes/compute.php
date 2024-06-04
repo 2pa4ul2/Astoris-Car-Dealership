@@ -28,12 +28,14 @@ try{
     $stmt->execute();
     $supplier_id = array();
     $supplier_name = array();
+    $stmt = $pdo->prepare($supplier_query);
+    $stmt->execute();
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         $supplier_id[] = $row['supplier_id'];
         $supplier_name[] = $row['supplier_name'];
     }
 
-//COUNT OF CARS PER CATEGORY
+    //COUNT OF CARS PER CATEGORY
     $prodquery = "SELECT category.category_name, COUNT(product.product_id) AS car_count
     FROM category
     LEFT JOIN product ON category.category_id = product.category_id
@@ -86,6 +88,37 @@ try{
     $stmt_price_count = $pdo->prepare($query_total_price);
     $stmt_price_count->execute();
     $price_count = $stmt_price_count->fetch(PDO::FETCH_ASSOC)['price_count'];   
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "carlink";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conn->prepare("SELECT product_id, product_name, SUM(quantity) AS total_quantity_sold
+                            FROM orders
+                            GROUP BY product_id, product_name
+                            ORDER BY total_quantity_sold DESC");
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    $productNames = array();
+    $quantities = array();
+    
+    foreach ($result as $row) {
+        $productNames[] = $row['product_name'];
+        $quantities[] = $row['total_quantity_sold'];
+    }
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+
 
 
 ?>
