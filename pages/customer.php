@@ -178,15 +178,15 @@ if (isset($_POST['add-to-table'])) {
                                             foreach ($_SESSION['cart'] as $key => $value) {
                                                 echo "<tr>";
                                                 echo "<td>".$value['product_name']."</td>";
-                                                echo "<td>".$value['price']."</td>";
+                                                echo "<td>$".number_format($value['price'],2)."</td>";
                                                 echo "<td>".$value['quantity']."</td>";
-                                                echo "<td>".$value['quantity'] * $value['price']."</td>";
+                                                echo "<td>$".number_format($value['quantity']* $value['price'],2)."</td>";
                                                 echo "</tr>";
                                                 $total = $total + ($value['quantity'] * $value['price']);
                                             }
                                             echo "<tr>";
                                             echo "<td colspan='3' align='right'>Total</td>";
-                                            echo "<td>".$total."</td>";
+                                            echo "<td>$".number_format($total,2)."</td>";
                                             echo "</tr>";
                                         }
                                     ?>
