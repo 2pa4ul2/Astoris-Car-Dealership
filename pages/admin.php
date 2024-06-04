@@ -2,6 +2,7 @@
 session_start();
 include "../includes/compute.php";
 include "../includes/extract_data.php";
+include "../includes/signin_function.php";
 // Check if user is logged in and has admin role
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     // Redirect to login page or show an error message
@@ -517,8 +518,24 @@ $username = $_SESSION['username'];
                                             </button>
                                         </div>
                                         <!-- Modal body -->
-                                        <form name="admin-form" action="../includes/accountcreate.php" method="post" class="p-4 md:p-5">
+                                        <form name="admin-form" action="../pages/admin.php" method="post" class="p-4 md:p-5">
                                             <div class="grid gap-4 mb-4 grid-cols-2">
+                                                <?php 
+                                                $errors = validate_input($_POST);
+                                                if (isset($_POST['admin-signup'])) {
+                                                    if (empty($errors) && create_account($conn, $_POST, 'admin')) {
+                                                        echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                                                    } else {
+                                                        if (!empty($errors)) {
+                                                            foreach ($errors as $error) {
+                                                                echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                                            }
+                                                        } else {
+                                                            echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                        }
+                                                    }
+                                                }
+                                                ?>
                                                 <div class="col-span-2">
                                                     <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
                                                     <input type="text" name="first_name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Sebastian Vettel" required="">
@@ -536,7 +553,7 @@ $username = $_SESSION['username'];
                                                     <input type="password" name="password" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Enter password" required="">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            <button type="submit" name="admin-signup" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                 <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                                 Add new product
                                             </button>
@@ -608,9 +625,26 @@ $username = $_SESSION['username'];
                                             </button>
                                         </div>
                                         <!-- Modal body -->
-                                        <form name="customer-form" action="../includes/accountcreate.php" method="post" class="p-4 md:p-5">
+                                        <form name="customer-form" action="../pages/admin.php" method="post" class="p-4 md:p-5">
                                             <div class="grid gap-4 mb-4 grid-cols-2">
-                                                <div class="col-span-2">
+                                            <?php
+                                                $errors = validate_input($_POST);  
+                                                if (isset($_POST['customer-signup'])) {
+                                                    if (empty($errors) && create_account($conn, $_POST, 'customer')) {
+                                                        echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                                                    } else {
+                                                        if (!empty($errors)) {
+                                                            foreach ($errors as $error) {
+                                                                echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                                            }
+                                                        } else {
+                                                            echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                        }
+                                                    }
+                                                    die();
+                                                }
+                                                ?>
+                                                                        <div class="col-span-2">
                                                     <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
                                                     <input type="text" name="first_name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Sebastian Vettel" required="">
                                                 </div>
@@ -627,7 +661,7 @@ $username = $_SESSION['username'];
                                                     <input type="password" name="password" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Enter password" required="">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            <button type="submit" name="customer-signup" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                 <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                                 Add new product
                                             </button>
@@ -702,6 +736,23 @@ $username = $_SESSION['username'];
                                         <!-- Modal body -->
                                         <form name="manager-form" action="../includes/accountcreate.php" method="post" class="p-4 md:p-5">
                                             <div class="grid gap-4 mb-4 grid-cols-2">
+                                            <?php
+                                            $errors = validate_input($_POST);  
+                                            if (isset($_POST['manager-signup'])) {
+                                                if (empty($errors) && create_account($conn, $_POST, 'manager')) {
+                                                    echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                                                } else {
+                                                    if (!empty($errors)) {
+                                                        foreach ($errors as $error) {
+                                                            echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                                        }
+                                                    } else {
+                                                        echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                    }
+                                                }
+                                                die();
+                                            }
+                                            ?>
                                                 <div class="col-span-2">
                                                     <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
                                                     <input type="text" name="first_name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Sebastian Vettel" required="">
@@ -719,7 +770,7 @@ $username = $_SESSION['username'];
                                                     <input type="password" name="password" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex. Enter password" required="">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            <button type="submit" name="manager-signup" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                 <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                                 Add new product
                                             </button>

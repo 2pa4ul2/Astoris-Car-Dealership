@@ -27,7 +27,6 @@ class SupplierManager {
         if (mysqli_num_rows($check_query) > 0) {
             die("Update failed: Duplicate supplier name found.");
         }
-
         $query = mysqli_query($this->conn, "UPDATE `supplier` SET `supplier_name`='$supplier_name', `contact_person`='$contact_person', `contact_number`='$contact_number' WHERE `supplier_id` = '$new_supplier_id'");
 
         if (!$query) {

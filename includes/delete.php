@@ -26,7 +26,7 @@ if (isset($_GET['supplier_id'])) {
     header('location: success.php?delete_msg=success.');
 }elseif(isset($_GET['admin_id'])){
     $admin_id = $_GET['admin_id'];
-    $delete = mysqli_query($conn, "DELETE FROM `admin` WHERE `admin_id`='$admin_id'");
+    $delete = mysqli_query($conn, "DELETE FROM `admn` WHERE `admin_id`='$admin_id'");
     header('location: success.php?delete_msg=success.');
 }elseif(isset($_GET['customer_id'])){
     $customer_id = $_GET['customer_id'];
