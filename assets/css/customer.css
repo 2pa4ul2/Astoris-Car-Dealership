@@ -396,35 +396,89 @@ table{
         border-radius: 5px;
     }
 
-.about-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 80px 0 0 0;
-    width: 100%;
-    height: auto;
-}
-    .astoris{
-        text-align: center;
-        font-size: 2rem;
-        color: white;
-    }
-    .mission-container{
+    .about-container{
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        width: 100%;
+        margin: 80px 0 0 0;
+        height: auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 90%;
+        text-align: left;
     }
-    .mission{
-        text-align: center;
-        line-height: 2;
-        font-weight: 300;
-        font-size: 1rem;
-        color: white;
-        width: 50%;
+    .about-container h4 {
+        color: #2c3e50;
+        font-size: 1.5em;
+        margin-bottom: 20px;
     }
 
-        
+    .mission-container {
+        margin-bottom: 30px;
+    }
+
+    .mission {
+        color: #7f8c8d;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    .about-container .astoris {
+        color: #2c3e50;
+        font-weight: bold;
+    }
+
+ 
+    .contact-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .contact-container h1 {
+        color: #2c3e50;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .contact-container h4 {
+        color: #34495e;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .contact-container p {
+        color: #7f8c8d;
+        line-height: 1.8;
+        margin: 10px 0;
+    }
+
+    .contact-container a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .contact-container a:hover {
+        text-decoration: underline;
+    }
+
+    .social-media-links a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #3498db;
+    }
+
+    .social-media-links a:hover {
+        color: #2980b9;
+    }
 
         ::-webkit-scrollbar {
             width: 6px;

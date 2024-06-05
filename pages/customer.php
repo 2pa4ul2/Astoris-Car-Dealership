@@ -244,42 +244,49 @@ if (isset($_POST['add-to-table'])) {
                 </div>
             </div>
             <div class="page" data-page="4">
-                <div class="about-container">
-                    <div>
-                        <h4 class="astoris">Astoris</h4>
-                            <div class="mission-container">
-                                <p class="mission">Welcome to Astoris Car Dealership, your premier destination for quality vehicles and exceptional service. With a commitment to excellence, we offer a curated selection of new and pre-owned cars, backed by transparent pricing and financing options. Our dedicated team is here to make your car-buying experience seamless and enjoyable. Visit us today and discover the Astoris difference.</p>
-                            </div>
-                    </div>
-                    <div>
-                        <h4 class="astoris">Our Mission</h4>
-                        <div class="mission-container">
-                            <p class="mission">At Astoris Car Dealership, our mission is simple: to provide every customer with a seamless and enjoyable car-buying experience. We achieve this by offering a curated selection of quality vehicles, transparent pricing, and flexible financing options. Our commitment to excellence drives us to exceed expectations and ensure that every customer leaves satisfied. With Astoris, you're not just buying a car; you're joining a community built on trust, integrity, and exceptional service.</p>
+                <div class="container">
+                    <div class="about-container">
+                        <div>
+                            <h4 class="astoris">Astoris</h4>
+                                <div class="mission-container">
+                                    <p class="mission">Welcome to Astoris Car Dealership, your premier destination for quality vehicles and exceptional service. With a commitment to excellence, we offer a curated selection of new and pre-owned cars, backed by transparent pricing and financing options. Our dedicated team is here to make your car-buying experience seamless and enjoyable. Visit us today and discover the Astoris difference.</p>
+                                </div>
                         </div>
-                        
+                        <div>
+                            <h4 class="astoris">Our Mission</h4>
+                            <div class="mission-container">
+                                <p class="mission">At Astoris Car Dealership, our mission is simple: to provide every customer with a seamless and enjoyable car-buying experience. We achieve this by offering a curated selection of quality vehicles, transparent pricing, and flexible financing options. Our commitment to excellence drives us to exceed expectations and ensure that every customer leaves satisfied. With Astoris, you're not just buying a car; you're joining a community built on trust, integrity, and exceptional service.</p>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="page" data-page="5">
-                <div class="about-container">
-                    <div>
-                        <h4>Contact us</h4>
-                    </div>
-                    <div>
-                    <h1>Astoris Car Dealership</h1>
-    <p>123 Main Street<br>
-    City, State, Zip Code</p>
-    <p>Phone: (123) 456-7890<br>
-    Email: <a href="mailto:info@astorisdealership.com">info@astorisdealership.com</a></p>
-    <p>Hours of Operation:<br>
-    Monday - Friday: 9:00 AM - 7:00 PM<br>
-    Saturday: 9:00 AM - 5:00 PM<br>
-    Sunday: Closed</p>
-    <p>Connect with us on social media:<br>
-    Facebook: <a href="https://www.facebook.com/astorisdealership">facebook.com/astorisdealership</a><br>
-    Twitter: <a href="https://twitter.com/astorisdealership">twitter.com/astorisdealership</a><br>
-    Instagram: <a href="https://instagram.com/astorisdealership">instagram.com/astorisdealership</a></p>
-    <p>For inquiries, appointments, or any assistance, please don't hesitate to <a href="contact.html">contact us</a>. We're here to help you every step of the way.</p>
+                <div class="container">    
+                    <div class="about-container">
+                        <div class="contact-container">
+                        <div>
+                            <h4>Contact us</h4>
+                        </div>
+                        <div>
+                            <h1>Astoris Car Dealership</h1>
+                            <p>123 Main Street<br>
+                            City, State, Zip Code</p>
+                            <p>Phone: (123) 456-7890<br>
+                            Email: <a href="mailto:info@astorisdealership.com">info@astorisdealership.com</a></p>
+                            <p>Hours of Operation:<br>
+                            Monday - Friday: 9:00 AM - 7:00 PM<br>
+                            Saturday: 9:00 AM - 5:00 PM<br>
+                            Sunday: Closed</p>
+                            <p>Connect with us on social media:</p>
+                            <p class="social-media-links">
+                                <a href="https://www.facebook.com/astorisdealership">Facebook</a>
+                                <a href="https://twitter.com/astorisdealership">Twitter</a>
+                                <a href="https://instagram.com/astorisdealership">Instagram</a>
+                            </p>
+                            <p>For inquiries, appointments, or any assistance, please don't hesitate to <a href="contact.html">contact us</a>. We're here to help you every step of the way.</p>
+                        </div>
                     </div>
                 </div>
             </div>

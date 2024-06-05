@@ -55,7 +55,7 @@ session_start();
 <div class="container">
     <div class="success-message">
         <i class="fas fa-check-circle success-icon"></i>
-        <h2>Record Deleted Successfully!</h2>
+        <h2>Failed!</h2>
         <div class="animation"></div>
         <p>Redirecting...</p>
     </div>

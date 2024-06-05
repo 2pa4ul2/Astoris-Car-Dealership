@@ -524,14 +524,14 @@ $username = $_SESSION['username'];
                                                 $errors = validate_input($_POST);
                                                 if (isset($_POST['admin-signup'])) {
                                                     if (empty($errors) && create_account($conn, $_POST, 'admin')) {
-                                                        echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                                                        header("Location: ../includes/success.php");
                                                     } else {
                                                         if (!empty($errors)) {
                                                             foreach ($errors as $error) {
                                                                 echo '<div class="error_display" style="display: block;">' . $error . '</div>';
                                                             }
                                                         } else {
-                                                            echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                            header("Location: ../includes/failed.php");
                                                         }
                                                     }
                                                 }
@@ -631,14 +631,14 @@ $username = $_SESSION['username'];
                                                 $errors = validate_input($_POST);  
                                                 if (isset($_POST['customer-signup'])) {
                                                     if (empty($errors) && create_account($conn, $_POST, 'customer')) {
-                                                        echo '<div class="success_display" style="display: block;">Account created successfully</div>';
+                                                        header("Location: ../includes/success.php");
                                                     } else {
                                                         if (!empty($errors)) {
                                                             foreach ($errors as $error) {
                                                                 echo '<div class="error_display" style="display: block;">' . $error . '</div>';
                                                             }
                                                         } else {
-                                                            echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                            header("Location: ../includes/failed.php");
                                                         }
                                                     }
                                                     die();
@@ -744,10 +744,10 @@ $username = $_SESSION['username'];
                                                 } else {
                                                     if (!empty($errors)) {
                                                         foreach ($errors as $error) {
-                                                            echo '<div class="error_display" style="display: block;">' . $error . '</div>';
+                                                            header("Location: ../includes/success.php");
                                                         }
                                                     } else {
-                                                        echo '<div class="error_display" style="display: block;">An error occurred. Please try again</div>';
+                                                        header("Location: ../includes/failed.php");
                                                     }
                                                 }
                                                 die();
