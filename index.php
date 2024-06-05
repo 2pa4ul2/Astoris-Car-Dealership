@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/guest.css">
+    <link rel="stylesheet" href="assets/css/customer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -60,37 +60,77 @@
             </div>
             <div class="page" data-page="2">
                 <div class="collections-container">
-                        <h1>OUR BRAND PARTNERS</h1>
-                        <div class="container">
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/audi.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/bmw.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/buick.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/chevy.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/dodge.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ferrari.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/ford.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/infiniti.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/kia.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lexus.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/lincoln.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maserati.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/maybach.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mercedes.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/mini.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/nissan.png" alt=""></a></div>
-                        <div class="cards"><a href="login.php"><img id="logo-img" src="../assets/images/brandlogo/oldsmobile.png" alt=""></a></div>
+                    <h1>OUR BRAND PARTNERS</h1>
+                    <div class="container">
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/audi.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/bmw.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/buick.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/chevy.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/dodge.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/ferrari.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/ford.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/infiniti.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/kia.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/lexus.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/lincoln.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/maserati.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/maybach.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/mercedes.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/mini.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/nissan.png" alt=""></a></div>
+                    <div class="cards"><a href="login.php"><img id="logo-img" src="assets/images/brandlogo/oldsmobile.png" alt=""></a></div>
 
-                        </div>
                     </div>
+                </div>
             </div>
             <div class="page" data-page="3">
                 <h2>page3</h2>
-                <p>c</p>
+                <p>c</p><div class="container">
+                    <div class="about-container">
+                        <div>
+                            <h4 class="astoris">Astoris</h4>
+                                <div class="mission-container">
+                                    <p class="mission">Welcome to Astoris Car Dealership, your premier destination for quality vehicles and exceptional service. With a commitment to excellence, we offer a curated selection of new and pre-owned cars, backed by transparent pricing and financing options. Our dedicated team is here to make your car-buying experience seamless and enjoyable. Visit us today and discover the Astoris difference.</p>
+                                </div>
+                        </div>
+                        <div>
+                            <h4 class="astoris">Our Mission</h4>
+                            <div class="mission-container">
+                                <p class="mission">At Astoris Car Dealership, our mission is simple: to provide every customer with a seamless and enjoyable car-buying experience. We achieve this by offering a curated selection of quality vehicles, transparent pricing, and flexible financing options. Our commitment to excellence drives us to exceed expectations and ensure that every customer leaves satisfied. With Astoris, you're not just buying a car; you're joining a community built on trust, integrity, and exceptional service.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="page" data-page="4">
-                <h2>page4</h2>
-                <p>d</p>
-            </div>
+                <div class="container">    
+                        <div class="about-container">
+                            <div class="contact-container">
+                            <div>
+                                <h4>Contact us</h4>
+                            </div>
+                            <div>
+                                <h1>Astoris Car Dealership</h1>
+                                <p>123 Main Street<br>
+                                City, State, Zip Code</p>
+                                <p>Phone: (123) 456-7890<br>
+                                Email: <a href="mailto:info@astorisdealership.com">info@astorisdealership.com</a></p>
+                                <p>Hours of Operation:<br>
+                                Monday - Friday: 9:00 AM - 7:00 PM<br>
+                                Saturday: 9:00 AM - 5:00 PM<br>
+                                Sunday: Closed</p>
+                                <p>Connect with us on social media:</p>
+                                <p class="social-media-links">
+                                    <a href="https://www.facebook.com/astorisdealership">Facebook</a>
+                                    <a href="https://twitter.com/astorisdealership">Twitter</a>
+                                    <a href="https://instagram.com/astorisdealership">Instagram</a>
+                                </p>
+                                <p>For inquiries, appointments, or any assistance, please don't hesitate to <a href="contact.html">contact us</a>. We're here to help you every step of the way.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 
