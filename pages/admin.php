@@ -3,6 +3,7 @@ session_start();
 include "../includes/compute.php";
 include "../includes/extract_data.php";
 include "../includes/signin_function.php";
+include "../includes/update.php";
 // Check if user is logged in and has admin role
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     // Redirect to login page or show an error message
@@ -129,6 +130,41 @@ $username = $_SESSION['username'];
                                     echo "</tr>";
                                 }
                                 ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <div class="table-content">
+                        <h1 class="summary">Order data</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product ID</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                        $num = mysqli_num_rows($queryord);
+                                        if($num > 0){
+                                            while($result = mysqli_fetch_assoc($queryord)){
+                                                echo"
+                                                <tr>
+                                                    <td>".$result['order_id']."</td>
+                                                    <td>".$result['product_id']."</td>
+                                                    <td>".$result['product_name']."</td>
+                                                    <td>$".number_format($result['price'],2)."</td>
+                                                    <td>+".$result['quantity']."</td>
+                                                ";
+                                            }
+                                            
+                                        }
+                                            
+                                    ?>
                             </tbody>
                         </table>
                     </div>
@@ -568,7 +604,7 @@ $username = $_SESSION['username'];
                                 <h1 class="summary">Customer Accounts</h1>
                                 <!-- Modal toggle -->
                                 <button data-modal-target="customer-modal" data-modal-toggle="customer-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-5" type="button">
-                                Add Product
+                                Add Customer
                                 </button>                            
                             </div>
                             <table>
@@ -677,7 +713,7 @@ $username = $_SESSION['username'];
                                 <h1 class="summary">Manager Accounts</h1>
                                 <!-- Modal toggle -->
                                 <button data-modal-target="manager-modal" data-modal-toggle="manager-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-5" type="button">
-                                Add Product
+                                Add Manager
                                 </button>                            
                             </div>
                             <table>

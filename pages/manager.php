@@ -259,6 +259,41 @@ $username = $_SESSION['username'];
                         </table>
                     </div>
                 </div>
+                <div class="table-container">
+                    <div class="table-content">
+                        <h1 class="summary">Order data</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product ID</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                        $num = mysqli_num_rows($queryord);
+                                        if($num > 0){
+                                            while($result = mysqli_fetch_assoc($queryord)){
+                                                echo"
+                                                <tr>
+                                                    <td>".$result['order_id']."</td>
+                                                    <td>".$result['product_id']."</td>
+                                                    <td>".$result['product_name']."</td>
+                                                    <td>$".number_format($result['price'],2)."</td>
+                                                    <td>+".$result['quantity']."</td>
+                                                ";
+                                            }
+                                            
+                                        }
+                                            
+                                    ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
 
