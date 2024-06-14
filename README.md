@@ -56,7 +56,7 @@
    - `order`
      - order_id, product_id, product_name, price, quantity, total, order_date
      - 
-## Key Take Aways From This Project
+## Key Takeaways From This Project
 - ### PHP and phpMyAdmin for Database Management
   - `Database Management`: Created and managed tables, ran SQL queries, and established relationships using PHP and phpMyAdmin.
   - `PHP Integration`: Developed dynamic web pages by integrating PHP with HTML/CSS.
